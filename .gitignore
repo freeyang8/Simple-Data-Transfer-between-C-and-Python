@@ -4,6 +4,8 @@
 # 忽略 VS Code 的用户特定配置（如窗口位置、本地历史）
 .vscode/*
 .continue/*
+proto/generated/cpp/*
+proto/generated/py/*
 
 # 但保留以下共享配置，方便团队协作
 !.vscode/settings.json
