@@ -1,0 +1,77 @@
+# ==========================================
+# VS Code 配置 (通用)
+# ==========================================
+# 忽略 VS Code 的用户特定配置（如窗口位置、本地历史）
+.vscode/*
+.continue/*
+
+# 但保留以下共享配置，方便团队协作
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ==========================================
+# Python 专用规则
+# ==========================================
+
+# 字节码与缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境 (venv, conda, virtualenv)
+venv/
+ENV/
+env/
+.venv/
+*.egg-info/
+
+# 打包与构建
+dist/
+build/
+
+# 测试与覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter Notebook 检查点
+.ipynb_checkpoints
+
+# ==========================================
+# C++ 专用规则
+# ==========================================
+
+# 编译器生成的中间文件
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.pdb
+*.ilk
+*.exp
+
+# 构建目录 (CMake, Makefile 等)
+build/
+cmake-build-debug/
+cmake-build-release/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+
+# Visual Studio C++ 特定文件 (如果使用 VS Code 配合 MSVC)
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+ipch/
+
+# 可执行文件 (根据实际项目调整，防止误传编译出的程序)
+*.exe
+*.out
+*.app

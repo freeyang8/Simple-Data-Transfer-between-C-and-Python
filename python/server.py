@@ -14,6 +14,15 @@ class SearchServiceServicer(message_pb2_grpc.SearchServiceServicer):
     #self是实例对象自身
     def Search(self, request, context):
         print(f"收到请求: query={request.query}, page={request.page_number}, success={request.success}")
+        #图像数据处理
+        if request.image_data:
+            image_format = request.image_format or "jpg"
+            filename = f"received_image.{image_format}"
+            with open(filename,"wb") as f:
+                f.write(request.image_data)
+            print(f"图片已保存为 {filename}, 大小 {len(request.image_data)} 字节")
+        else:
+            print("未收到图片数据")
         # 模拟处理
         result = f"你搜索了 '{request.query}'，这是第 {request.page_number} 页，成功标志={request.success}"
         return message_pb2.SearchResponse(result=result)

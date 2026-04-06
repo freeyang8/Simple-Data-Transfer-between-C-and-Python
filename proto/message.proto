@@ -23,6 +23,8 @@ message SearchRequest {
   string query = 1;
   int32 page_number = 2;
   bool success = 3;
+  bytes image_data = 4;  //图片数据
+  string image_format = 5; //图片格式
 }
 
 // 响应消息
